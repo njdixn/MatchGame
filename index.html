@@ -1,0 +1,130 @@
+<!-- All images that are preloaded are the trademark of Nintendo -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/triforce.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Nikole Dixon | Match Game!</title>
+</head>
+<body>
+ <div class="container">
+        <div class="header">
+            <h1>Memory Game</h1>
+            <p class="subtitle">Test your memory and find all matching pairs!</p>
+        </div>
+
+        <div class="instructions">
+            <strong>How to Play:</strong> Click on cards to flip them and find matching pairs. 
+            The fewer moves you make, the better your score!
+        </div>
+
+        <!-- Difficulty - Drop down to change - default is medium -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy (4×4)</option>
+                    <option value="medium"selected>Medium (6×4)</option>
+                    <option value="hard">Hard (6×6)</option>
+                </select>
+            </div>
+
+            <!-- Reset Button - goes back default everything -->
+            <div class="control-group">
+                <button class="btn-secondary" id="resetBtn">Reset</button>
+            </div>
+
+            <!-- Theeme - default Zelda -->
+            <div class="control-group">
+                <label>Theme:</label>
+                <div class="theme-options">
+                    <div class="theme-option">
+                        <input type="radio" id="zelda-theme" name="theme" value="zelda" checked>
+                        <label for="zelda-theme">Zelda</label>
+                    </div>
+                    <div class="theme-option">
+                        <input type="radio" id="emoji-theme" name="theme" value="emoji">
+                        <label for="emoji-theme">Emojis</label>
+                    </div>
+                    <div class="theme-option">
+                        <input type="radio" id="color-theme" name="theme" value="color">
+                        <label for="color-theme">Colors</label>
+                    </div>
+                    <div class="theme-option">
+                        <input type="radio" id="symbol-theme" name="theme" value="symbol">
+                        <label for="symbol-theme">Symbols</label>
+                    </div>
+
+                    <!-- Images Theme - User can add in their own pictures -->
+                    <div class="theme-option">
+                        <input type="radio" id="image-theme" name="theme" value="image">
+                        <label for="image-theme">Images</label>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Upload images - User can add in their own picture -->
+            <div class="control-group" id="imageUploadControl">
+                <label for="imageUpload">Upload Images:</label>
+                <input type="file" id="imageUpload" multiple accept="image/*">
+                <span id="imageCount">(0 images)</span>
+            </div>
+        </div>
+
+        <!-- Game tracking -->
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-label">Moves</div>
+                <div class="stat-value" id="moves">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Time</div>
+                <div class="stat-value" id="timer">0:00</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Matched</div>
+                <div class="stat-value"><span id="matched">0</span>/8</div>
+            </div>
+        </div>
+
+        <!-- Game cards -->
+        <div class="buttons">
+            <button class="btn-primary" id="startBtn"></button>
+        </div>
+
+        <!-- <div class="message" id="message"></div> -->
+
+        <!-- Game Board -->
+        <div class="game-board" id="gameBoard"></div>
+    
+        <div class="header">
+            <p class="subtitle" id="ninproperty">All preloaded images are property of Nintendo.</p>
+        </div>    
+    </div>
+
+    <!-- Game complete message with stats -->
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <h2>🎉 Game Complete!</h2>
+            <p>Congratulations! You've matched all pairs!</p>
+            <div class="score-display">
+                <div>Moves: <span id="finalMoves">0</span></div>
+                <div>Time: <span id="finalTime">0:00</span></div>
+                <div>Score: <span id="finalScore">0</span> points</div>
+            </div>
+
+            <!-- Resets game id user want to play again -->
+            <div class="buttons">
+                <button class="btn-primary" onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/script/main.js"></script>
+</body>
+</html>
