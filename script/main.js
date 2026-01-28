@@ -35,7 +35,7 @@ const config = {
         symbol: ['★', '●', '■', '▲', '♥', '♦', '♠', '♣', '◆', '◇', '○', '△', '◈', '▼', '▶', '◀', '⬟', '✦'],
 
         // all of these images are property of Nintendo (NJD)
-        zelda: ['./MatchGame/images/bomb.png', './MatchGame/images/boomerang.png', './MatchGame/images/boots.png', './MatchGame/images/bowarrow.png', './MatchGame/images/ganondorf.png', './MatchGame/images/goddessharp.png', './MatchGame/images/heart.png', './MatchGame/images/hylianshield.png', './MatchGame/images/ironboots.png', './MatchGame/images/lensoftruth.png', './MatchGame/images/link.png', './MatchGame/images/mastersword.png', './MatchGame/MatchGame/images/ocarina.png', './MatchGame/images/rupee.png', './MatchGame/images/slingshot.png', './MatchGame/images/smallkey.png', './MatchGame/images/triforce.png', './MatchGame/images/zelda.png'],
+        zelda: ['./images/bomb.png', './images/boomerang.png', './images/boots.png', './images/bowarrow.png', './images/ganondorf.png', './images/goddessharp.png', './images/heart.png', './images/hylianshield.png', './images/ironboots.png', './images/lensoftruth.png', './images/link.png', './images/mastersword.png', './images/ocarina.png', './images/rupee.png', './images/slingshot.png', './images/smallkey.png', './images/triforce.png', './images/zelda.png'],
 
         // I asked for this before the Zelda game thinking the AI would give me a place to add in the images in the code, not upload them. decided to keep because it is cool.
         image: []
@@ -493,4 +493,5 @@ document.getElementById('imageUpload').addEventListener('change', (e) => {
 // Initialize the game board on page load
 window.addEventListener('load', () => {
     initializeGame();
+
 });
